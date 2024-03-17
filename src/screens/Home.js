@@ -1,24 +1,12 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { DataFetchType } from '../constants';
+import { DataButton } from '../components';
 
-function HomeScreen({ navigation }) {
+function HomeScreen() {
   return (
     <View style={styles.container}>
-      <Pressable
-        onPress={() =>
-          navigation.navigate('Details', {
-            type: DataFetchType.FETCH,
-          })
-        }
-        style={{
-          padding: 10,
-          marginVertical: 10,
-          borderRadius: 10,
-          backgroundColor: '#1dab6f',
-        }}
-      >
-        <Text style={styles.textStyle}>Fetch API Example</Text>
-      </Pressable>
+      <DataButton title="Fetch API Example" type={DataFetchType.FETCH} />
+      <DataButton title="Axios Example" type={DataFetchType.AXIOS} />
     </View>
   );
 }
@@ -31,10 +19,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#80c0c0',
-  },
-  textStyle: {
-    padding: 10,
-    fontSize: 24,
-    color: '#f5f5f5',
   },
 });

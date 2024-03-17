@@ -13,7 +13,6 @@ const ListWrapper = ({ loading, error, data }) => {
       {error && (
         <Text style={[styles.errTextStyle]}>Error: {error?.message}</Text>
       )}
-
       {data && (
         <FlatList
           data={data}
@@ -29,7 +28,12 @@ const ListWrapper = ({ loading, error, data }) => {
 export default ListWrapper;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#1dab6f',
+  },
   listStyle: {
     flexGrow: 1,
     paddingBottom: 20,

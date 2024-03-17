@@ -1,3 +1,5 @@
 import FetchExample from './FetchExample';
+import DataButton from './DataButton';
+import AxiosExample from './AxiosExample';
 
-export { FetchExample };
+export { FetchExample, DataButton, AxiosExample };

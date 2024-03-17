@@ -1,4 +1,4 @@
 export const DataFetchType = {
-  FETCH: 'FETCH',
+  FETCH: 'FETCH API',
   AXIOS: 'AXIOS',
 };
