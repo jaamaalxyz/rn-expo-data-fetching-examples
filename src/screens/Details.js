@@ -1,9 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { FetchExample } from '../components';
 
-function DetailsScreen() {
+function DetailsScreen({ route }) {
+  const { type } = route.params;
   return (
     <View style={styles.container}>
-      <Text>Details Screen</Text>
+      <FetchExample type={type} />
     </View>
   );
 }
@@ -15,5 +17,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#1dab6f',
   },
 });

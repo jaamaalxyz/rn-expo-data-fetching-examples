@@ -1,21 +1,23 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { DataFetchType } from '../constants';
 
 function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
-      {/* add a pressable button to navigate to the details screen */}
-
       <Pressable
-        onPress={() => navigation.navigate('Details')}
+        onPress={() =>
+          navigation.navigate('Details', {
+            type: DataFetchType.FETCH,
+          })
+        }
         style={{
-          backgroundColor: '#0ada1a',
           padding: 10,
           marginVertical: 10,
           borderRadius: 10,
+          backgroundColor: '#1dab6f',
         }}
       >
-        <Text>Go to Details</Text>
+        <Text style={styles.textStyle}>Fetch API Example</Text>
       </Pressable>
     </View>
   );
@@ -28,5 +30,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#80c0c0',
+  },
+  textStyle: {
+    padding: 10,
+    fontSize: 24,
+    color: '#f5f5f5',
   },
 });
